@@ -6,9 +6,16 @@ import { fetchTodos, toggleTodo, deleteTodo, toggleTab } from '../actions';
 import { TABS } from '../actions/types';
 
 class TodoList extends Component {
-  componentDidMount() {
+  componentDidMount = async () => {
     this.props.fetchTodos();
-  }
+    try {
+      setInterval(async () => {
+        this.props.fetchTodos();
+      }, 10000);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   removeComplete = () => {
     this.props.todos.forEach(({ done, _id }) => {
