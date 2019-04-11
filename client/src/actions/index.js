@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, DELETE_TODO, TOGGLE_TAB } from './types';
+import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, UPDATE_TODO, DELETE_TODO, TOGGLE_TAB } from './types';
 
 export const fetchTodos = () => async dispatch => {
   const res = await axios.get('/api/todos');
@@ -17,6 +17,12 @@ export const toggleTodo = id => async dispatch => {
   const res = await axios.put(`/api/todos/${id}`);
 
   dispatch({ type: TOGGLE_TODO, payload: res.data });
+};
+
+export const updateTodo = (id, name) => async dispatch => {
+  const res = await axios.put(`/api/todos/${id}/edit`, { name });
+
+  dispatch({ type: UPDATE_TODO, payload: { ...res.data, name } });
 };
 
 export const deleteTodo = id => async dispatch => {

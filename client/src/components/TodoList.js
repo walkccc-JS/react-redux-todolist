@@ -28,6 +28,7 @@ class TodoList extends Component {
       return (
         <Todo
           key={todo._id}
+          id={todo._id}
           name={todo.name}
           done={todo.done}
           toggleTodo={() => this.props.toggleTodo(todo._id)}

@@ -76,7 +76,7 @@ ol {
   color: #bdc3c7;
 }
 
-.X {
+.icon {
   float: right;
   margin-right: 1rem;
   color: #c0392b;
@@ -84,9 +84,28 @@ ol {
   opacity: 0;
 }
 
-.X:focus {
+.icon.edit {
+  color: #58b2dc;
+}
+
+.icon:focus {
   border: none;
   outline: 0;
+}
+
+.edit-todo {
+  width: 85%;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.6s;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.edit-todo:focus {
+  outline: none;
+  border-bottom: 1px solid #58b2dc;
 }
 
 @media screen and (max-width: 650px) {
@@ -100,6 +119,10 @@ ol {
 
   .input {
     width: 95%;
+  }
+
+  .edit-todo {
+    width: 70%;
   }
 }
 

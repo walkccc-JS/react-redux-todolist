@@ -30,6 +30,14 @@ module.exports = app => {
     res.send(todo);
   });
 
+  app.put('/api/todos/:id/edit', async (req, res) => {
+    const { name } = req.body;
+    const todo = await Todo.findOneAndUpdate({ _id: req.params.id }, { name });
+    await todo.save();
+
+    res.send(todo);
+  });
+
   app.delete('/api/todos/:id', async (req, res) => {
     const id = req.params.id;
     const todo = await Todo.findByIdAndDelete(id);
