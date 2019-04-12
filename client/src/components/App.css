@@ -27,7 +27,7 @@ header h2 {
 }
 
 .form {
-  width: 45rem;
+  width: 100%;
   margin-bottom: 1rem;
 }
 
@@ -48,7 +48,7 @@ ol {
 }
 
 .list {
-  width: 45rem;
+  width: 95%;
 }
 
 .task {
@@ -109,18 +109,6 @@ ol {
 }
 
 @media screen and (max-width: 650px) {
-  .form {
-    width: 100%;
-  }
-
-  .list {
-    width: 95%;
-  }
-
-  .input {
-    width: 95%;
-  }
-
   .edit-todo {
     width: 70%;
   }
