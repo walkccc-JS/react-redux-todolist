@@ -24,7 +24,10 @@ module.exports = app => {
 
   app.put('/api/todos/:id', async (req, res) => {
     const todoRef = await Todo.findById(req.params.id);
-    const todo = await Todo.findOneAndUpdate({ _id: req.params.id }, { done: !todoRef.done });
+    const todo = await Todo.findOneAndUpdate(
+      { _id: req.params.id },
+      { done: !todoRef.done }
+    );
     await todo.save();
 
     res.send(todo);

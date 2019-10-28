@@ -1,4 +1,10 @@
-import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, UPDATE_TODO, DELETE_TODO } from '../actions/types';
+import {
+  FETCH_TODOS,
+  ADD_TODO,
+  TOGGLE_TODO,
+  UPDATE_TODO,
+  DELETE_TODO
+} from '../actions/types';
 
 export default function(state = [], action) {
   switch (action.type) {
@@ -12,7 +18,9 @@ export default function(state = [], action) {
       );
     case UPDATE_TODO:
       return state.map(todo =>
-        todo._id === action.payload._id ? { ...todo, name: action.payload.name } : todo
+        todo._id === action.payload._id
+          ? { ...todo, name: action.payload.name }
+          : todo
       );
     case DELETE_TODO:
       return state.filter(todo => todo._id !== action.payload._id);

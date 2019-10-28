@@ -1,5 +1,12 @@
 import axios from 'axios';
-import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, UPDATE_TODO, DELETE_TODO, TOGGLE_TAB } from './types';
+import {
+  FETCH_TODOS,
+  ADD_TODO,
+  TOGGLE_TODO,
+  UPDATE_TODO,
+  DELETE_TODO,
+  TOGGLE_TAB
+} from './types';
 
 export const fetchTodos = () => async dispatch => {
   const res = await axios.get('/api/todos');

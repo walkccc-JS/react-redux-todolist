@@ -43,7 +43,9 @@ class Todo extends Component {
         }}
         onClick={toggleTodo}
       >
-        <span style={{ display: this.state.editing ? 'none' : '' }}>{name}</span>
+        <span style={{ display: this.state.editing ? 'none' : '' }}>
+          {name}
+        </span>
         <form
           className="form"
           style={{ display: this.state.editing ? 'inline' : 'none' }}
